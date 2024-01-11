@@ -9,19 +9,11 @@
     <div>
       <p id="textoAVoz">Este es el texto que se leerá en voz alta.</p>
       <button onclick="leerTexto()">Leer en voz alta</button>
+      <button onclick="realizarSolicitud()">
+        Realizar solicitud a Eleven Labs
+      </button>
     </div>
 
-    <script>
-      function leerTexto() {
-        // Obtener el elemento que contiene el texto a leer
-        var elementoTexto = document.getElementById("textoAVoz");
-
-        // Crear un objeto SpeechSynthesisUtterance con el texto
-        var mensaje = new SpeechSynthesisUtterance(elementoTexto.innerText);
-
-        // Usar la API de Text-to-Speech para leer el mensaje
-        window.speechSynthesis.speak(mensaje);
-      }
-    </script>
+    <script src="tts.js"></script>
   </body>
 </html>

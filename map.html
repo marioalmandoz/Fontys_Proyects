@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STOLPERSTEINE.APP</title>
+    <link rel="stylesheet" href="home.css" type="text/css" />
+    <!-- Agrega la siguiente línea para incluir la API de Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places"></script>
+  </head>
+  <body onload="mostrarMapa()">
+    <header>
+      <h1>STOLPERSTEINE.APP</h1>
+    </header>
+
+    <!-- Sección para el mapa -->
+    <div id="map"></div>
+    <nav>
+      <button onclick="location.href='home.html'">HOME</button>
+      <button onclick="location.href='map.html'">MAP</button>
+      <button onclick="location.href='pagina3.html'">HISTORY</button>
+    </nav>
+
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+  </body>
+</html>
