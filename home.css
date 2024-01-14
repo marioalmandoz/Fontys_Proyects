@@ -2,20 +2,50 @@ body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #edcc70;
   text-align: center;
 }
 
 header {
-  background-color: #ffffff;
+  background-color: #edcc70;
   color: #d11616;
   padding: 1em 0;
   font: small-caps 100%/200% serif; /* Ajusta el valor según tus preferencias */
+  border-bottom: 1px solid white; /* Añade un borde blanco en la parte inferior */
+}
+
+header h1 img {
+  width: 30px; /* Ajusta el ancho según tus preferencias */
+  height: auto; /* Mantén la proporción de la imagen */
+  margin-right: 10px; /* Ajusta según tus preferencias para separar la imagen del texto */
+  vertical-align: middle; /* Alinea verticalmente la imagen al medio del texto */
+}
+
+.background-container {
+  background-image: url("IMG_5461.jpg"); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
+  background-size: cover; /* Ajusta según tus preferencias (cover, contain, etc.) */
+  background-position: center; /* Ajusta según tus preferencias (top, bottom, left, right, etc.) */
+  height: 400px; /* Ajusta la altura según tus preferencias */
+  position: relative; /* Necesario para posicionar el contenido dentro */
+}
+
+.background-container h2,
+.background-container p {
+  margin-bottom: 10px; /* Ajusta la separación entre el título y el párrafo según sea necesario */
+  color: white; /* Color blanco para el texto */
+  text-align: center; /* Centrar el texto horizontalmente */
+  position: absolute;
+  bottom: 0; /* Alinear el texto en la parte inferior */
+  left: 50%; /* Alinear el texto en el centro */
+  transform: translateX(-50%); /* Centrar el texto horizontalmente */
+  width: 100%; /* Ajustar al ancho completo de la container */
+  padding: 20px; /* Agregar relleno según sea necesario */
 }
 
 nav {
-  background-color: #d11616;
+  background-color: #dea400;
   color: #fff;
+  border-top: 2px solid white; /* Añade un borde blanco en la parte inferior */
   padding: 10px;
   position: fixed;
   bottom: 0;
@@ -23,11 +53,11 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
 }
 
 section {
   margin: 20px;
+  border-bottom: 1px solid white; /* Añade un borde blanco en la parte inferior */
 }
 
 #botones-verticales {
@@ -38,7 +68,65 @@ section {
 }
 
 #botones-verticales button {
-  margin-bottom: 10px;
-  font-size: 18px; /* Ajusta el tamaño de la fuente según tus preferencias */
+  margin-bottom: 30px;
+  font-size: 20px; /* Ajusta el tamaño de la fuente según tus preferencias */
   padding: 15px; /* Ajusta el relleno (padding) según tus preferencias */
+  background-color: #e30613;
+  color: #fff;
+  border-radius: 20px; /* Ajusta el valor del border-radius según tus preferencias */
+  border: none; /* Elimina el borde */
+  width: 90%; /* Ajustar al ancho completo de la container */
+  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*Esto es para la parte de la busqueda de Stolperstein*/
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.search-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+}
+
+.button-icon {
+  margin-right: 10px;
+  width: 24px; /* Ajusta el ancho de la imagen según tus preferencias */
+  height: 24px; /* Ajusta la altura de la imagen según tus preferencias */
 }
