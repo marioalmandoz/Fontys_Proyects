@@ -56,6 +56,7 @@ function realizarSolicitud() {
 }
 
 //This part of the code is for the webcam
+/*
 const video = document.getElementById("inputVideo");
 const canvas = document.getElementById("overlay");
 
@@ -81,7 +82,7 @@ function onPlay(videoElement) {
   // Esta función se llama cuando el video está listo para reproducirse
   console.log("Video is ready:", videoElement);
   // Puedes realizar acciones adicionales aquí si es necesario
-}
+}*/
 
 //Codigo para el mapa
 function iniciarMap() {

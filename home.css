@@ -29,7 +29,12 @@ header h1 img {
   position: relative; /* Necesario para posicionar el contenido dentro */
 }
 
-.background-container h2,
+.background-container h2 {
+  margin-top: -10px;
+  color: #fff;
+  position: absolute;
+  bottom: 50px;
+}
 .background-container p {
   margin-bottom: 10px; /* Ajusta la separación entre el título y el párrafo según sea necesario */
   color: white; /* Color blanco para el texto */
@@ -64,12 +69,12 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: calc(100% + 2px); /* Posición 20px por debajo de la sección 2 */
+  margin-top: 40px;
 }
 
 #botones-verticales button {
   margin-bottom: 30px;
-  font-size: 20px; /* Ajusta el tamaño de la fuente según tus preferencias */
+  font-size: 30px; /* Ajusta el tamaño de la fuente según tus preferencias */
   padding: 15px; /* Ajusta el relleno (padding) según tus preferencias */
   background-color: #e30613;
   color: #fff;
@@ -101,32 +106,176 @@ section {
   font-size: 16px;
 }
 
-.search-button {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-}
-
 .action-buttons {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  top: calc(100% + 2px); /* Posición 20px por debajo de la sección 2 */
+  padding: 10px;
 }
 
 .action-button {
   display: flex;
   align-items: center;
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
-  background-color: #2196f3;
-  color: white;
+  background-color: #dea400;
+  color: black;
   border: none;
+  margin: 2px;
+  width: 100%; /* Ajustar al ancho completo de la container */
 }
 
 .button-icon {
   margin-right: 10px;
-  width: 24px; /* Ajusta el ancho de la imagen según tus preferencias */
-  height: 24px; /* Ajusta la altura de la imagen según tus preferencias */
+  width: 35px; /* Ajusta el ancho de la imagen según tus preferencias */
+  height: 35px; /* Ajusta la altura de la imagen según tus preferencias */
+}
+
+/*Code for the timeLine*/
+
+.timeline {
+  position: relative;
+  max-width: 750px;
+  margin: 50px auto;
+  align-items: right;
+}
+
+.line {
+  position: absolute;
+  top: 130px;
+  left: 15%;
+  width: 2px;
+  height: 66%;
+  background-color: #e30613;
+  transform: translateX(-50%);
+}
+
+.event {
+  position: relative;
+  margin-left: 15%;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.event img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #e30613;
+  border-radius: 50%;
+}
+
+/*Code for the timeline Googlecode*/
+
+html {
+  font-family: sans-serif;
+}
+.lineatemp {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.fila {
+  display: flex;
+  justify-content: start;
+  border-bottom: 1px solid lightgray;
+  position: relative;
+}
+.fila .disco {
+  width: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.fila .disco:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(505 - 2px);
+  height: 100%;
+  width: 3px;
+  background: #80deea;
+  z-index: -1;
+}
+.fila:first-child .disco:after {
+  height: 50%;
+  top: 50%;
+}
+.fila:last-child .disco:after {
+  height: 50%;
+}
+.fila .disco > div {
+  width: 50%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #e30613;
+  box-sizing: border-box;
+}
+.fila:hover .disco > div {
+  border: 3px solid red;
+  background: white;
+}
+.fila div:nth-of-type(2) {
+  width: 20%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+.fila div:nth-of-type(3) {
+  width: 60%;
+  padding: 4px;
+}
+
+/*Buttons code Style*/
+
+.buttons {
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #edcc70;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 10px;
+  background-color: #fff;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+/* Estilos para el botón de volumen */
+.volume-button {
+  background-color: #fff;
+  margin-left: auto;
+}
+
+/* Estilos para el ícono de volumen */
+.volume-icon::before {
+  content: "\1F50A"; /* Símbolo Unicode para el ícono de volumen */
+  font-size: 24px;
 }
