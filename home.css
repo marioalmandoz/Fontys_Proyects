@@ -15,9 +15,9 @@ header {
 }
 
 header h1 img {
-  width: 30px; /* Ajusta el ancho según tus preferencias */
+  width: 400px; /* Ajusta el ancho según tus preferencias */
   height: auto; /* Mantén la proporción de la imagen */
-  margin-right: 10px; /* Ajusta según tus preferencias para separar la imagen del texto */
+  margin-right: 0px; /* Ajusta según tus preferencias para separar la imagen del texto */
   vertical-align: middle; /* Alinea verticalmente la imagen al medio del texto */
 }
 
@@ -278,4 +278,46 @@ html {
 .volume-icon::before {
   content: "\1F50A"; /* Símbolo Unicode para el ícono de volumen */
   font-size: 24px;
+}
+
+.webcam-container {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+#webcam-title {
+  color: #800206;
+  text-align: center;
+  font-size: 23px;
+}
+
+#inputVideo {
+  width: 352px;
+  height: 400px;
+  border-radius: 10%;
+  align-items: center;
+  margin-top: 30px;
+  flex-shrink: 0;
+}
+
+.cuadro-vacio {
+  position: absolute;
+  width: 200px; /* Ajusta el ancho según tus necesidades */
+  height: 200px; /* Ajusta la altura según tus necesidades */
+  border-color: white;
+  border-width: 3px;
+  border-style: dashed;
+  margin-top: -460px;
+  margin-left: 25%;
+}
+.picture {
+  border-radius: 70%;
+  margin-top: -100px;
+}
+
+.picture button {
+  background: none;
+  border: none;
+  font-size: 50px;
+  margin: 1px; /* Separación de 1 píxel entre el borde y el botón */
 }
