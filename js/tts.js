@@ -135,87 +135,70 @@ if ("geolocation" in navigator) {
 }*/
 
 //Function to take a picture
-//Function to take a picture
-async function tomarFoto() {
-  try {
-    // Solicitar permiso para acceder a la ubicación
-    await obtenerPermisoUbicacion();
+function tomarFoto() {
+  // Obtener el video y el canvas
+  var video = document.getElementById("inputVideo");
+  var canvas = document.getElementById("overlay");
 
-    // Obtener el video y el canvas
-    var video = document.getElementById("inputVideo");
-    var canvas = document.getElementById("overlay");
+  // Configurar el canvas con el mismo tamaño que el video
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
 
-    // Configurar el canvas con el mismo tamaño que el video
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+  // Dibujar el fotograma actual del video en el canvas
+  canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    // Dibujar el fotograma actual del video en el canvas
-    canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+  // Obtener la URL de la imagen en formato base64
+  var fotoURL = canvas.toDataURL("image/png");
 
-    // Obtener la URL de la imagen en formato base64
-    var fotoURL = canvas.toDataURL("image/png");
+  // Crear un elemento de imagen y asignar la URL
+  var imagen = new Image();
+  imagen.src = fotoURL;
 
-    // Crear un elemento de imagen y asignar la URL
-    var imagen = new Image();
-    imagen.src = fotoURL;
+  // Eliminar cualquier imagen anterior si existe
+  var imagenAnterior = document.getElementById("imagenCapturada");
+  if (imagenAnterior) {
+    imagenAnterior.parentNode.removeChild(imagenAnterior);
+  }
 
-    // Eliminar cualquier imagen anterior si existe
-    var imagenAnterior = document.getElementById("imagenCapturada");
-    if (imagenAnterior) {
-      imagenAnterior.parentNode.removeChild(imagenAnterior);
+  // Asignar un ID a la imagen para que puedas referenciarla fácilmente si es necesario
+  imagen.id = "imagenCapturada";
+
+  // Añadir la imagen a un contenedor específico (puedes cambiar el ID según tus necesidades)
+  var contenedorImagen = document.getElementById("contenedorImagen");
+  contenedorImagen.appendChild(imagen);
+
+  // Mostrar las coordenadas
+  mostrarCoordenadas();
+}
+
+function mostrarCoordenadas() {
+  // Obtener la ubicación actual
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      // Éxito: position es un objeto con la información de la ubicación
+      var coordenadasDiv = document.getElementById("coordenadas");
+      coordenadasDiv.innerHTML =
+        "Ubicación obtenida:<br>Latitud: " +
+        position.coords.latitude +
+        "<br>Longitud: " +
+        position.coords.longitude;
+    },
+    function (error) {
+      // Error: manejar errores aquí
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          alert("Permiso denegado para obtener la ubicación.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Información de ubicación no disponible.");
+          break;
+        case error.TIMEOUT:
+          alert("La solicitud para obtener la ubicación ha caducado.");
+          break;
+        case error.UNKNOWN_ERROR:
+          alert("Ocurrió un error desconocido al obtener la ubicación.");
+          break;
+      }
     }
-
-    // Asignar un ID a la imagen para que puedas referenciarla fácilmente si es necesario
-    imagen.id = "imagenCapturada";
-
-    // Añadir la imagen a un contenedor específico (puedes cambiar el ID según tus necesidades)
-    var contenedorImagen = document.getElementById("contenedorImagen");
-    contenedorImagen.appendChild(imagen);
-
-    // Mostrar las coordenadas después de tomar la foto
-    mostrarCoordenadas();
-  } catch (error) {
-    console.error("Error al tomar la foto:", error);
-  }
-}
-
-// Función para obtener permiso de ubicación
-async function obtenerPermisoUbicacion() {
-  return new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(
-      () => resolve(),
-      (error) => reject(error),
-      { enableHighAccuracy: true }
-    );
-  });
-}
-
-// Función para mostrar las coordenadas
-async function mostrarCoordenadas() {
-  try {
-    // Obtener la ubicación actual
-    const position = await obtenerUbicacion();
-
-    // Éxito: position es un objeto con la información de la ubicación
-    var coordenadasDiv = document.getElementById("coordenadas");
-    coordenadasDiv.innerHTML =
-      "Ubicación obtenida:<br>Latitud: " +
-      position.coords.latitude +
-      "<br>Longitud: " +
-      position.coords.longitude;
-  } catch (error) {
-    // Error: manejar errores aquí
-    console.error("Error al obtener la ubicación:", error);
-  }
-}
-
-// Función para obtener la ubicación
-async function obtenerUbicacion() {
-  return new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => resolve(position),
-      (error) => reject(error),
-      { enableHighAccuracy: true }
-    );
-  });
+  );
 }
