@@ -69,6 +69,7 @@ nav {
   flex-direction: column; /* Coloca el texto debajo del icono */
   align-items: center; /* Centra los elementos horizontalmente */
   cursor: pointer;
+  font-size: 30px;
 }
 
 .menu-icon span {
