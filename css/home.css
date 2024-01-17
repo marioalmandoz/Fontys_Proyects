@@ -30,7 +30,7 @@ header h1 img {
 }
 
 .background-container img {
-  height: 300px;
+  height: 400px;
   width: 100%;
 }
 
@@ -64,6 +64,17 @@ nav {
   justify-content: space-around;
 }
 
+.menu-icon {
+  display: flex;
+  flex-direction: column; /* Coloca el texto debajo del icono */
+  align-items: center; /* Centra los elementos horizontalmente */
+  cursor: pointer;
+}
+
+.menu-icon span {
+  margin-top: 5px; /* Ajusta el espacio entre el icono y el texto según tus preferencias */
+  color: #670104;
+}
 section {
   margin: 20px;
   border-bottom: 1px solid white; /* Añade un borde blanco en la parte inferior */

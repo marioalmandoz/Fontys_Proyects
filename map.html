@@ -1,45 +1,101 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="manifest" href="manifest.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STOLPERSTEINE.APP</title>
+    <title>Leaflet Map with Current Location</title>
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="css/home.css" type="text/css" />
-    <!-- Agrega la siguiente línea para incluir la API de Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
   </head>
-  <body onload="mostrarMapa()">
+  <body>
     <header>
       <h1>
         <img src="images/Stolpersteine_newlogo.png" />
       </h1>
     </header>
+    <!-- Your map container -->
+    <div id="map" style="height: 400px"></div>
 
-    <!-- Sección para el mapa -->
     <nav class="bottom-menu">
       <div class="menu-icon">
-        <a href="home.html"> <i class="fas fa-home" style="color: black"></i></a
-        ><span></span>
+        <a href="home.html"> <i class="fas fa-home" style="color: white"></i></a
+        ><span>Home</span>
       </div>
-      <div class="menu-icon" onclick="reloadPage()">
+      <div class="menu-icon">
         <a href="map.html"
           ><i class="fas fa-map-marker-alt" style="color: #670104"></i></a
-        ><span></span>
+        ><span>Map</span>
       </div>
       <div class="menu-icon">
         <a href="history.html"
-          ><i class="fas fa-book" style="color: black"></i
+          ><i class="fas fa-book" style="color: white"></i
         ></a>
-        <span></span>
+        <span>History</span>
       </div>
     </nav>
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    <script src="js/tts.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+    <!-- Your custom JavaScript -->
+    <script>
+      var mymap = L.map("map").setView([0, 0], 2); // Default view
+
+      // Add a tile layer (OpenStreetMap)
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(mymap);
+
+      // Function to handle geolocation success
+      function onLocationFound(e) {
+        var radius = e.accuracy / 2;
+
+        L.marker(e.latlng)
+          .addTo(mymap)
+          .bindPopup("You are within " + radius + " meters from this point")
+          .openPopup();
+
+        L.circle(e.latlng, radius).addTo(mymap);
+      }
+
+      // Function to handle geolocation error
+      function onLocationError(e) {
+        alert(e.message);
+      }
+
+      var customIcon = L.icon({
+        iconUrl: "/img/stolpersteinestone.png", // Replace with the path to your image
+        iconSize: [32, 32], // Size of the icon
+        iconAnchor: [16, 32], // Point of the icon that corresponds to the marker's location
+        popupAnchor: [0, -32], // Point from which the popup should open relative to the iconAnchor
+      });
+
+      // Add a marker at a specific location
+      var customMarker = L.marker([51.43208596421437, 5.473341450075729]).addTo(
+        mymap
+      );
+      var customMarker2 = L.marker([
+        51.440036974184096, 5.477060169690364,
+      ]).addTo(mymap);
+
+      // Add a popup to the marker
+      customMarker.bindPopup("<b>Staringstraat 29").openPopup();
+      customMarker2.bindPopup("<b>DEMER 13").openPopup();
+
+      customMarker.on("click", function () {
+        // Navigate to a different HTML page
+        window.location.href = "camera.html";
+      });
+      // Try to get user's location
+      mymap.locate({ setView: true, maxZoom: 16 });
+
+      mymap.on("locationfound", onLocationFound);
+      mymap.on("locationerror", onLocationError);
+    </script>
   </body>
 </html>
