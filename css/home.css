@@ -2,13 +2,13 @@ body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #edcc70;
+  background-color: #e3c689;
   text-align: center;
 }
 
 header {
-  background-color: #edcc70;
-  color: #d11616;
+  background-color: #e3c689;
+  color: #670104;
   padding: 1em 0;
   font: small-caps 100%/200% serif; /* Ajusta el valor según tus preferencias */
   border-bottom: 1px solid white; /* Añade un borde blanco en la parte inferior */
@@ -22,11 +22,16 @@ header h1 img {
 }
 
 .background-container {
-  background-image: url("IMG_5461.jpg"); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
+  /*background-image: url("images\IMG_5461.jpg");  Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
   background-size: cover; /* Ajusta según tus preferencias (cover, contain, etc.) */
   background-position: center; /* Ajusta según tus preferencias (top, bottom, left, right, etc.) */
   height: 400px; /* Ajusta la altura según tus preferencias */
   position: relative; /* Necesario para posicionar el contenido dentro */
+}
+
+.background-container img {
+  height: 300px;
+  width: 100%;
 }
 
 .background-container h2 {
@@ -44,11 +49,10 @@ header h1 img {
   left: 50%; /* Alinear el texto en el centro */
   transform: translateX(-50%); /* Centrar el texto horizontalmente */
   width: 100%; /* Ajustar al ancho completo de la container */
-  padding: 20px; /* Agregar relleno según sea necesario */
 }
 
 nav {
-  background-color: #dea400;
+  background-color: #a57d27;
   color: #fff;
   border-top: 2px solid white; /* Añade un borde blanco en la parte inferior */
   padding: 10px;
@@ -76,7 +80,7 @@ section {
   margin-bottom: 30px;
   font-size: 30px; /* Ajusta el tamaño de la fuente según tus preferencias */
   padding: 15px; /* Ajusta el relleno (padding) según tus preferencias */
-  background-color: #e30613;
+  background-color: #670104;
   color: #fff;
   border-radius: 20px; /* Ajusta el valor del border-radius según tus preferencias */
   border: none; /* Elimina el borde */
@@ -148,7 +152,7 @@ section {
   left: 15%;
   width: 2px;
   height: 66%;
-  background-color: #e30613;
+  background-color: #670104;
   transform: translateX(-50%);
 }
 
@@ -174,7 +178,7 @@ section {
   transform: translateY(-50%);
   width: 12px;
   height: 12px;
-  background-color: #e30613;
+  background-color: #670104;
   border-radius: 50%;
 }
 
@@ -225,11 +229,11 @@ html {
   width: 50%;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: #e30613;
+  background: #670104;
   box-sizing: border-box;
 }
 .fila:hover .disco > div {
-  border: 3px solid red;
+  border: 3px solid #670104;
   background: white;
 }
 .fila div:nth-of-type(2) {
@@ -250,7 +254,7 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #edcc70;
+  background-color: #e3c689;
   padding: 10px;
   text-align: center;
   z-index: 1000;
@@ -286,9 +290,17 @@ html {
 }
 
 #webcam-title {
-  color: #800206;
+  color: #670104;
   text-align: center;
   font-size: 23px;
+}
+#foto {
+  width: 352px;
+  height: 400px;
+  border-radius: 10%;
+  align-items: center;
+  margin-top: 30px;
+  flex-shrink: 0;
 }
 
 #inputVideo {
@@ -320,4 +332,12 @@ html {
   border: none;
   font-size: 50px;
   margin: 1px; /* Separación de 1 píxel entre el borde y el botón */
+}
+
+#coordenadas {
+  position: fixed;
+  bottom: 110px; /* Ajusta la distancia desde la parte inferior según tus preferencias */
+  left: 10px; /* Ajusta la distancia desde el lado derecho según tus preferencias */
+  background-color: none; /* Color de fondo para mayor visibilidad */
+  padding: 10px;
 }

@@ -10,13 +10,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <!-- Agrega la siguiente línea para incluir la API de Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places"></script>
   </head>
   <body>
     <header>
       <h1>
-        <img src="Stolpersteine_newlogo.png" />
+        <img src="images/Stolpersteine_newlogo.png" />
       </h1>
     </header>
 
@@ -29,7 +27,6 @@
         muted
         playsinline
       ></video>
-
       <canvas id="overlay"></canvas>
     </div>
     <div class="cuadro-vacio"></div>
@@ -37,17 +34,17 @@
       <button onclick="tomarFoto()">
         <i class="fas fa-circle"></i>
       </button>
-      <div id="contenedorImagen"></div>
-      <div id="coordenadas"></div>
     </div>
+    <div id="coordenadas"></div>
 
     <nav class="bottom-menu">
-      <div class="menu-icon" onclick="reloadPage()">
-        <i class="fas fa-home" style="color: red"></i><span></span>
+      <div class="menu-icon">
+        <a href="home.html"> <i class="fas fa-home" style="color: black"></i></a
+        ><span></span>
       </div>
       <div class="menu-icon">
         <a href="map.html"
-          ><i class="fas fa-map-marker-alt" style="color: black"></i></a
+          ><i class="fas fa-map-marker-alt" style="color: #670104"></i></a
         ><span></span>
       </div>
       <div class="menu-icon">

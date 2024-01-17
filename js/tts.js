@@ -1,14 +1,3 @@
-function leerTexto() {
-  // Obtener el elemento que contiene el texto a leer
-  var elementoTexto = document.getElementById("textoAVoz");
-
-  // Crear un objeto SpeechSynthesisUtterance con el texto
-  var mensaje = new SpeechSynthesisUtterance(elementoTexto.innerText);
-
-  // Usar la API de Text-to-Speech para leer el mensaje
-  window.speechSynthesis.speak(mensaje);
-}
-
 // ElevenLabs API request
 function realizarSolicitud(texto) {
   //const fetch = require("node-fetch"); // Necesario si estás ejecutando en un entorno no navegador (por ejemplo, Node.js)
@@ -84,19 +73,6 @@ function onPlay(videoElement) {
   // Puedes realizar acciones adicionales aquí si es necesario
 }
 
-//Codigo para el mapa
-function iniciarMap() {
-  var coord = { lat: -34.5956145, lng: -58.4431949 };
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 10,
-    center: coord,
-  });
-  var marker = new google.maps.Marker({
-    position: coord,
-    map: map,
-  });
-}
-
 // Function to get the location
 /*
 // Verificar si el navegador soporta la geolocalización
@@ -154,6 +130,10 @@ function tomarFoto() {
   var imagen = new Image();
   imagen.src = fotoURL;
 
+  // Establecer el tamaño de la imagen
+  imagen.width = 300;
+  imagen.height = 300;
+
   // Eliminar cualquier imagen anterior si existe
   var imagenAnterior = document.getElementById("imagenCapturada");
   if (imagenAnterior) {
@@ -164,7 +144,7 @@ function tomarFoto() {
   imagen.id = "imagenCapturada";
 
   // Añadir la imagen a un contenedor específico (puedes cambiar el ID según tus necesidades)
-  var contenedorImagen = document.getElementById("contenedorImagen");
+  var contenedorImagen = document.getElementById("overlay");
   contenedorImagen.appendChild(imagen);
 
   // Mostrar las coordenadas
