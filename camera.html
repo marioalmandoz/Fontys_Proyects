@@ -14,7 +14,7 @@
   <body>
     <header>
       <h1>
-        <img src="images/Stolpersteine_newlogo.png" />
+        <img src="images/finallogo.png" />
       </h1>
     </header>
 
@@ -54,6 +54,28 @@
         <span>History</span>
       </div>
     </nav>
+    <script>
+      const video = document.getElementById("inputVideo");
+      const canvas = document.getElementById("overlay");
+
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        const constraints = { video: true };
+
+        navigator.mediaDevices
+          .getUserMedia(constraints)
+          .then((stream) => {
+            video.srcObject = stream;
+            video.play();
+          })
+          .catch((error) => {
+            console.error("Error al acceder a la cámara:", error);
+          });
+      } else {
+        console.error(
+          "La API getUserMedia no está disponible en este navegador."
+        );
+      }
+    </script>
     <script src="js/tts.js"></script>
   </body>
 </html>

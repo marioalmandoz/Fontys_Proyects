@@ -46,27 +46,6 @@ function realizarSolicitud(texto) {
 
 //This part of the code is for the webcam
 
-const video = document.getElementById("inputVideo");
-const canvas = document.getElementById("overlay");
-
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  const constraints = { video: true };
-  //This is for the smartphone
-  //const constraints = { video: { facingMode: 'user'/'enviroment' } };
-
-  navigator.mediaDevices
-    .getUserMedia(constraints)
-    .then((stream) => {
-      video.srcObject = stream;
-      video.play();
-    })
-    .catch((error) => {
-      console.error("Error al acceder a la cámara:", error);
-    });
-} else {
-  console.error("La API getUserMedia no está disponible en este navegador.");
-}
-
 function onPlay(videoElement) {
   // Esta función se llama cuando el video está listo para reproducirse
   console.log("Video is ready:", videoElement);
@@ -74,41 +53,6 @@ function onPlay(videoElement) {
 }
 
 // Function to get the location
-/*
-// Verificar si el navegador soporta la geolocalización
-if ("geolocation" in navigator) {
-  // Solicitar permiso para acceder a la ubicación
-  navigator.geolocation.getCurrentPosition(
-    function (position) {
-      // Éxito: position es un objeto con la información de la ubicación
-      alert(
-        "Ubicación obtenida:\nLatitud: " +
-          position.coords.latitude +
-          "\nLongitud: " +
-          position.coords.longitude
-      );
-    },
-    function (error) {
-      // Error: manejar errores aquí
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          alert("Permiso denegado para obtener la ubicación.");
-          break;
-        case error.POSITION_UNAVAILABLE:
-          alert("Información de ubicación no disponible.");
-          break;
-        case error.TIMEOUT:
-          alert("La solicitud para obtener la ubicación ha caducado.");
-          break;
-        case error.UNKNOWN_ERROR:
-          alert("Ocurrió un error desconocido al obtener la ubicación.");
-          break;
-      }
-    }
-  );
-} else {
-  alert("Geolocalización no compatible con este navegador.");
-}*/
 
 //Function to take a picture
 function tomarFoto() {
