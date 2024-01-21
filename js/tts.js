@@ -102,7 +102,7 @@ function mostrarCoordenadas() {
       // Éxito: position es un objeto con la información de la ubicación
       var coordenadasDiv = document.getElementById("coordenadas");
       coordenadasDiv.innerHTML =
-        "Ubicación obtenida:<br>Latitud: " +
+        "Your exact location:<br>Latitud: " +
         position.coords.latitude +
         "<br>Longitud: " +
         position.coords.longitude;
