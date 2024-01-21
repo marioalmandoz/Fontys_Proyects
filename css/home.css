@@ -161,10 +161,10 @@ section {
 
 .line {
   position: absolute;
-  top: 130px;
+  top: 60px;
   left: 15%;
   width: 2px;
-  height: 66%;
+  height: 86%;
   background-color: #670104;
   transform: translateX(-50%);
 }
@@ -186,8 +186,8 @@ section {
 
 .dot {
   position: absolute;
-  top: 50%;
-  left: -6px;
+  top: 40%;
+  left: -13px;
   transform: translateY(-50%);
   width: 12px;
   height: 12px;
@@ -195,6 +195,9 @@ section {
   border-radius: 50%;
 }
 
+.event p {
+  background-color: white;
+}
 /*Code for the timeline Googlecode*/
 
 html {
