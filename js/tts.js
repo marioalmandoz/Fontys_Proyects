@@ -75,8 +75,8 @@ function tomarFoto() {
   imagen.src = fotoURL;
 
   // Establecer el tamaño de la imagen
-  imagen.width = 300;
-  imagen.height = 300;
+  imagen.width = 150;
+  imagen.height = 150;
 
   // Eliminar cualquier imagen anterior si existe
   var imagenAnterior = document.getElementById("imagenCapturada");
