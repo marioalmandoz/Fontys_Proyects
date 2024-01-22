@@ -1,5 +1,5 @@
 // ElevenLabs API request
-function realizarSolicitud(texto) {
+function makeRequest(texto) {
   //const fetch = require("node-fetch"); // Necesario si estás ejecutando en un entorno no navegador (por ejemplo, Node.js)
 
   const url =
@@ -55,7 +55,7 @@ function onPlay(videoElement) {
 // Function to get the location
 
 //Function to take a picture
-function tomarFoto() {
+function takephoto() {
   // Obtener el video y el canvas
   var video = document.getElementById("inputVideo");
   var canvas = document.getElementById("overlay");
@@ -92,10 +92,10 @@ function tomarFoto() {
   contenedorImagen.appendChild(imagen);
 
   // Mostrar las coordenadas
-  mostrarCoordenadas();
+  showCoordinates();
 }
 
-function mostrarCoordenadas() {
+function showCoordinates() {
   // Obtener la ubicación actual
   navigator.geolocation.getCurrentPosition(
     function (position) {

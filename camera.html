@@ -29,14 +29,14 @@
       ></video>
       <canvas id="overlay"></canvas>
     </div>
-    <div class="cuadro-vacio"></div>
+    <div class="Empty-box"></div>
     <div class="picture">
-      <button onclick="tomarFoto()">
+      <button onclick="takephoto()">
         <i class="fas fa-circle"></i>
       </button>
     </div>
 
-    <div id="coordenadas"></div>
+    <div id="coordinates"></div>
 
     <nav class="bottom-menu">
       <div class="menu-icon">
@@ -69,12 +69,10 @@
             video.play();
           })
           .catch((error) => {
-            console.error("Error al acceder a la cámara:", error);
+            console.error("Error accessing the camera:", error);
           });
       } else {
-        console.error(
-          "La API getUserMedia no está disponible en este navegador."
-        );
+        console.error("The getUserMedia API is not available in this browser.");
       }
     </script>
     <script src="js/tts.js"></script>

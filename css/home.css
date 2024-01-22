@@ -10,23 +10,23 @@ header {
   background-color: #e3c689;
   color: #670104;
   padding: 1em 0;
-  font: small-caps 100%/200% serif; /* Ajusta el valor según tus preferencias */
-  border-bottom: 1px solid white; /* Añade un borde blanco en la parte inferior */
+  font: small-caps 100%/200% serif; /* Adjust the value according to your preferences */
+  border-bottom: 1px solid white; /* Add a white border at the bottom */
 }
 
 header h1 img {
-  width: 400px; /* Ajusta el ancho según tus preferencias */
-  height: auto; /* Mantén la proporción de la imagen */
-  margin-right: 0px; /* Ajusta según tus preferencias para separar la imagen del texto */
-  vertical-align: middle; /* Alinea verticalmente la imagen al medio del texto */
+  width: 400px; /* Adjust the width according to your preferences */
+  height: auto; /* Maintain the image's proportion */
+  margin-right: 0px; /* Adjust as per your preferences to separate the image from the text */
+  vertical-align: middle; /* Vertically align the image to the middle of the text */
 }
 
 .background-container {
-  /*background-image: url("images\IMG_5461.jpg");  Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
-  background-size: cover; /* Ajusta según tus preferencias (cover, contain, etc.) */
-  background-position: center; /* Ajusta según tus preferencias (top, bottom, left, right, etc.) */
-  height: 400px; /* Ajusta la altura según tus preferencias */
-  position: relative; /* Necesario para posicionar el contenido dentro */
+  /*background-image: url("images\IMG_5461.jpg");  Replace 'ruta_de_tu_imagen.jpg' with your image path */
+  background-size: cover; /* Adjust as per your preferences (cover, contain, etc.) */
+  background-position: center; /* Adjust as per your preferences (top, bottom, left, right, etc.) */
+  height: 400px; /* Adjust the height according to your preferences */
+  position: relative; /* Necessary for positioning the content inside */
 }
 
 .background-container img {
@@ -41,20 +41,20 @@ header h1 img {
   bottom: 50px;
 }
 .background-container p {
-  margin-bottom: 10px; /* Ajusta la separación entre el título y el párrafo según sea necesario */
-  color: white; /* Color blanco para el texto */
-  text-align: center; /* Centrar el texto horizontalmente */
+  margin-bottom: 10px; /* Adjust the separation between title and paragraph as necessary */
+  color: white; /* White color for the text */
+  text-align: center; /* Center the text horizontally */
   position: absolute;
-  bottom: 0; /* Alinear el texto en la parte inferior */
-  left: 50%; /* Alinear el texto en el centro */
-  transform: translateX(-50%); /* Centrar el texto horizontalmente */
-  width: 100%; /* Ajustar al ancho completo de la container */
+  bottom: 0; /* Align the text at the bottom */
+  left: 50%; /* Align the text in the center */
+  transform: translateX(-50%); /* Center the text horizontally */
+  width: 100%; /* Adjust to the full width of the container */
 }
 
 nav {
   background-color: #a57d27;
   color: #fff;
-  border-top: 2px solid white; /* Añade un borde blanco en la parte inferior */
+  border-top: 2px solid white; /* Add a white border at the top */
   padding: 10px;
   position: fixed;
   bottom: 0;
@@ -66,19 +66,19 @@ nav {
 
 .menu-icon {
   display: flex;
-  flex-direction: column; /* Coloca el texto debajo del icono */
-  align-items: center; /* Centra los elementos horizontalmente */
+  flex-direction: column; /* Place text below the icon */
+  align-items: center; /* Center elements horizontally */
   cursor: pointer;
   font-size: 30px;
 }
 
 .menu-icon span {
-  margin-top: 5px; /* Ajusta el espacio entre el icono y el texto según tus preferencias */
+  margin-top: 5px; /* Adjust the space between the icon and the text as per your preferences */
   color: #670104;
 }
 section {
   margin: 20px;
-  border-bottom: 1px solid white; /* Añade un borde blanco en la parte inferior */
+  border-bottom: 1px solid white; /* Add a white border at the bottom */
 }
 
 #botones-verticales {
@@ -90,17 +90,17 @@ section {
 
 #botones-verticales button {
   margin-bottom: 30px;
-  font-size: 30px; /* Ajusta el tamaño de la fuente según tus preferencias */
-  padding: 15px; /* Ajusta el relleno (padding) según tus preferencias */
+  font-size: 30px; /* Adjust the font size as per your preferences */
+  padding: 15px; /* Adjust the padding as per your preferences */
   background-color: #670104;
   color: #fff;
-  border-radius: 20px; /* Ajusta el valor del border-radius según tus preferencias */
-  border: none; /* Elimina el borde */
-  width: 90%; /* Ajustar al ancho completo de la container */
+  border-radius: 20px; /* Adjust the border-radius value as per your preferences */
+  border: none; /* Remove the border */
+  width: 90%; /* Adjust to the full width of the container */
   box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
 }
 
-/*Esto es para la parte de la busqueda de Stolperstein*/
+/* Styling for the Stolperstein search part */
 .container {
   width: 80%;
   margin: 0 auto;
@@ -126,7 +126,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: calc(100% + 2px); /* Posición 20px por debajo de la sección 2 */
+  top: calc(100% + 2px); /* Position 20px below section 2 */
   padding: 10px;
 }
 
@@ -140,16 +140,16 @@ section {
   color: black;
   border: none;
   margin: 2px;
-  width: 100%; /* Ajustar al ancho completo de la container */
+  width: 100%; /* Adjust to the full width of the container */
 }
 
 .button-icon {
   margin-right: 10px;
-  width: 35px; /* Ajusta el ancho de la imagen según tus preferencias */
-  height: 35px; /* Ajusta la altura de la imagen según tus preferencias */
+  width: 35px; /* Adjust the width of the image as per your preferences */
+  height: 35px; /* Adjust the height of the image as per your preferences */
 }
 
-/*Code for the timeLine*/
+/* Code for the timeline */
 
 .timeline {
   position: relative;
@@ -198,7 +198,14 @@ section {
 .event p {
   background-color: white;
 }
-/*Code for the timeline Googlecode*/
+
+.chatbox img {
+  z-index: 0;
+}
+.chatbox p {
+  z-index: 1;
+}
+/* Code for the timeline Googlecode */
 
 html {
   font-family: sans-serif;
@@ -263,7 +270,7 @@ html {
   padding: 4px;
 }
 
-/*Buttons code Style*/
+/* Button styling */
 
 .buttons {
   display: flex;
@@ -288,15 +295,17 @@ html {
   font-size: 30px;
 }
 
-/* Estilos para el botón de volumen */
+/* Styles for the volume button */
+
 .volume-button {
   background-color: #fff;
   margin-left: auto;
 }
 
-/* Estilos para el ícono de volumen */
+/* Styles for the volume icon */
+
 .volume-icon::before {
-  content: "\1F50A"; /* Símbolo Unicode para el ícono de volumen */
+  content: "\1F50A"; /* Unicode symbol for the volume icon */
   font-size: 24px;
 }
 
@@ -328,10 +337,10 @@ html {
   flex-shrink: 0;
 }
 
-.cuadro-vacio {
+.Empty-box {
   position: absolute;
-  width: 200px; /* Ajusta el ancho según tus necesidades */
-  height: 200px; /* Ajusta la altura según tus necesidades */
+  width: 200px; /* Adjust the width as per your needs */
+  height: 200px; /* Adjust the height as per your needs */
   border-color: white;
   border-width: 3px;
   border-style: dashed;
@@ -347,13 +356,13 @@ html {
   background: none;
   border: none;
   font-size: 50px;
-  margin: 1px; /* Separación de 1 píxel entre el borde y el botón */
+  margin: 1px; /* 1-pixel separation between the border and the button */
 }
 
-#coordenadas {
+#coordinates {
   position: fixed;
-  bottom: 110px; /* Ajusta la distancia desde la parte inferior según tus preferencias */
-  left: 10px; /* Ajusta la distancia desde el lado derecho según tus preferencias */
-  background-color: none; /* Color de fondo para mayor visibilidad */
+  bottom: 110px; /* Adjust the distance from the bottom as per your preferences */
+  left: 10px; /* Adjust the distance from the right side as per your preferences */
+  background-color: none; /* Background color for better visibility */
   padding: 10px;
 }
