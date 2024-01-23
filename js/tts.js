@@ -1,3 +1,15 @@
+function speech(texto) {
+  // Obtener el elemento que contiene el texto a leer
+  var elementoTexto = texto;
+
+  console.log(texto);
+  // Crear un objeto SpeechSynthesisUtterance con el texto
+  var mensaje = new SpeechSynthesisUtterance(texto);
+
+  // Usar la API de Text-to-Speech para leer el mensaje
+  window.speechSynthesis.speak(mensaje);
+}
+
 // ElevenLabs API request
 function makeRequest(texto) {
   //const fetch = require("node-fetch"); // Necesario si estás ejecutando en un entorno no navegador (por ejemplo, Node.js)
@@ -95,34 +107,3 @@ function takephoto() {
   showCoordinates();
 }
 
-function showCoordinates() {
-  // Obtener la ubicación actual
-  navigator.geolocation.getCurrentPosition(
-    function (position) {
-      // Éxito: position es un objeto con la información de la ubicación
-      var coordenadasDiv = document.getElementById("coordenadas");
-      coordenadasDiv.innerHTML =
-        "Your exact location:<br>Latitud: " +
-        position.coords.latitude +
-        "<br>Longitud: " +
-        position.coords.longitude;
-    },
-    function (error) {
-      // Error: manejar errores aquí
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          alert("Permiso denegado para obtener la ubicación.");
-          break;
-        case error.POSITION_UNAVAILABLE:
-          alert("Información de ubicación no disponible.");
-          break;
-        case error.TIMEOUT:
-          alert("La solicitud para obtener la ubicación ha caducado.");
-          break;
-        case error.UNKNOWN_ERROR:
-          alert("Ocurrió un error desconocido al obtener la ubicación.");
-          break;
-      }
-    }
-  );
-}
