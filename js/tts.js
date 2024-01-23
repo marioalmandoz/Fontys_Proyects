@@ -90,39 +90,4 @@ function takephoto() {
   // Añadir la imagen a un contenedor específico (puedes cambiar el ID según tus necesidades)
   var contenedorImagen = document.getElementById("overlay");
   contenedorImagen.appendChild(imagen);
-
-  // Mostrar las coordenadas
-  showCoordinates();
-}
-
-function showCoordinates() {
-  // Obtener la ubicación actual
-  navigator.geolocation.getCurrentPosition(
-    function (position) {
-      // Éxito: position es un objeto con la información de la ubicación
-      var coordenadasDiv = document.getElementById("coordenadas");
-      coordenadasDiv.innerHTML =
-        "Your exact location:<br>Latitud: " +
-        position.coords.latitude +
-        "<br>Longitud: " +
-        position.coords.longitude;
-    },
-    function (error) {
-      // Error: manejar errores aquí
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          alert("Permiso denegado para obtener la ubicación.");
-          break;
-        case error.POSITION_UNAVAILABLE:
-          alert("Información de ubicación no disponible.");
-          break;
-        case error.TIMEOUT:
-          alert("La solicitud para obtener la ubicación ha caducado.");
-          break;
-        case error.UNKNOWN_ERROR:
-          alert("Ocurrió un error desconocido al obtener la ubicación.");
-          break;
-      }
-    }
-  );
 }

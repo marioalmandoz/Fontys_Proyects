@@ -150,18 +150,24 @@ section {
 }
 
 /* Code for the timeline */
+.namevict {
+  /*ADDED THIS*/
+  margin-bottom: -40px;
+}
 
 .timeline {
+  /*CHANGED THIS*/
   position: relative;
   max-width: 750px;
-  margin: 50px auto;
+  margin: 10px auto;
+  margin-bottom: 150px;
   align-items: right;
   padding: 10px;
 }
 
 .line {
   position: absolute;
-  top: 60px;
+  top: 125px; /*CHANGED THIS*/
   left: 15%;
   width: 2px;
   height: 86%;
@@ -174,19 +180,19 @@ section {
   margin-left: 15%;
   padding: 20px;
   box-sizing: border-box;
-  width: 50%;
+  width: 70%; /* CHANGED THIS */
 }
 
 .event img {
   max-width: 100%;
-  height: auto;
-  border-radius: 10%;
+  height: 150px;
+  /*DELETE THIS border-radius: 10%;  */
   margin-bottom: 10px;
 }
 
 .dot {
   position: absolute;
-  top: 40%;
+  top: 80%;
   left: -13px;
   transform: translateY(-50%);
   width: 12px;
@@ -195,15 +201,22 @@ section {
   border-radius: 50%;
 }
 
+/* DELETE THIS:
 .event p {
   background-color: white;
-}
+} */
 
 .chatbox img {
-  z-index: 0;
+  /*CHANGED THIS*/
+  height: 80px;
+  /* z-index: 0; */
 }
 .chatbox p {
-  z-index: 1;
+  /*CHANGED THIS*/
+  margin-top: -85px;
+  padding-left: 30px;
+  padding-right: 5px;
+  /* z-index: 1; */
 }
 /* Code for the timeline Googlecode */
 
@@ -330,26 +343,33 @@ html {
 
 #inputVideo {
   width: 352px;
-  height: 400px;
+  height: 300px;
   border-radius: 10%;
   align-items: center;
   margin-top: 30px;
   flex-shrink: 0;
 }
 
+#overlay {
+  margin-bottom: -200px;
+  max-height: 200px;
+  max-width: 200px;
+}
+
 .Empty-box {
   position: absolute;
   width: 200px; /* Adjust the width as per your needs */
   height: 200px; /* Adjust the height as per your needs */
-  border-color: white;
+  border-color: #e42a2a;
   border-width: 3px;
   border-style: dashed;
-  margin-top: -460px;
+  margin-top: -275px;
   margin-left: 25%;
 }
+
 .picture {
   border-radius: 70%;
-  margin-top: -100px;
+  margin-top: -30px;
 }
 
 .picture button {
@@ -361,8 +381,4 @@ html {
 
 #coordinates {
   position: fixed;
-  bottom: 110px; /* Adjust the distance from the bottom as per your preferences */
-  left: 10px; /* Adjust the distance from the right side as per your preferences */
-  background-color: none; /* Background color for better visibility */
-  padding: 10px;
 }

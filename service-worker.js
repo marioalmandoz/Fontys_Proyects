@@ -1,14 +1,32 @@
-const cacheName = "Stolpersteine";
+const cacheName = "StolpersteineFinal";
 const appFiles = [
+  "./",
   "manifest.webmanifest",
   "js/tts.js",
+  "js/scripts.js",
   "css/home.css",
-  "./",
-  "home.html",
+  "css/map.css",
+  "index.html",
   "map.html",
   "tts.html",
   "camera.html",
   "history.html",
+  "eduard.html",
+  "helmut.html",
+  "images/Auschwitz.png",
+  "images/background text.png",
+  "images/Captura de pantalla 2024-01-14 134257.png",
+  "images/Demer.png",
+  "images/Eduard Hornemann.png",
+  "images/eindhoven-philips-hd.jpg",
+  "images/finallogo.png",
+  "images/Helmut Loewenstein.png",
+  "images/http___collectie.atlasvanstolk.nl_img_AVS_700px_06_AVS065170.jpg.jpg",
+  "images/https___images.memorix.nl_niod_thumb_1000x1000_7d211b84-2075-02b7-4ee3-a0597a1871ee.jpg.jpg",
+  "images/https___images.memorix.nl_niod_thumb_1000x1000_43f54f2e-656c-7860-2088-0a996f3b1835.jpg.jpg",
+  "images/IMG_5461.jpg",
+  "images/small_stolpersteine_newlogo.png",
+  "images/stolpersteinestone.png",
 ];
 
 self.addEventListener("install", (installing) => {

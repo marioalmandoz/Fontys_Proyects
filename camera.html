@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <script src="js/scripts.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,6 +21,7 @@
 
     <div id="webcam-container">
       <h1 id="webcam-title">Get the Stolperstein in the square</h1>
+      <div id="coordinates"></div>
       <video
         onloadedmetadata="onPlay(this)"
         id="inputVideo"
@@ -32,15 +34,29 @@
     <div class="Empty-box"></div>
     <div class="picture">
       <button onclick="takephoto()">
-        <i class="fas fa-circle"></i>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="60"
+          height="60"
+          viewBox="0 0 110 110"
+          fill="none"
+        >
+          <path
+            d="M55 89.375C73.9848 89.375 89.375 73.9848 89.375 55C89.375 36.0152 73.9848 20.625 55 20.625C36.0152 20.625 20.625 36.0152 20.625 55C20.625 73.9848 36.0152 89.375 55 89.375Z"
+            fill="black"
+          />
+          <path
+            d="M55 103.125C45.4818 103.125 36.1773 100.303 28.2632 95.0145C20.3491 89.7264 14.1808 82.2103 10.5383 73.4166C6.89585 64.6229 5.94282 54.9466 7.79973 45.6113C9.65664 36.2759 14.2401 27.7009 20.9705 20.9705C27.7009 14.2401 36.276 9.65661 45.6113 7.7997C54.9466 5.94279 64.623 6.89582 73.4167 10.5383C82.2104 14.1808 89.7265 20.3491 95.0145 28.2632C100.303 36.1773 103.125 45.4818 103.125 55C103.11 67.7591 98.0355 79.9914 89.0135 89.0134C79.9914 98.0355 67.7591 103.11 55 103.125ZM55 13.75C46.8415 13.75 38.8663 16.1693 32.0828 20.7019C25.2992 25.2345 20.0121 31.6768 16.89 39.2143C13.7679 46.7518 12.951 55.0457 14.5426 63.0475C16.1343 71.0492 20.063 78.3992 25.8319 84.1681C31.6008 89.9371 38.9508 93.8657 46.9525 95.4574C54.9543 97.049 63.2483 96.2321 70.7857 93.11C78.3232 89.9879 84.7655 84.7008 89.2981 77.9173C93.8307 71.1337 96.25 63.1585 96.25 55C96.2373 44.0637 91.8872 33.579 84.1541 25.8459C76.421 18.1128 65.9363 13.7627 55 13.75Z"
+            fill="black"
+          />
+        </svg>
       </button>
     </div>
 
-    <div id="coordinates"></div>
-
     <nav class="bottom-menu">
       <div class="menu-icon">
-        <a href="home.html"> <i class="fas fa-home" style="color: white"></i></a
+        <a href="index.html">
+          <i class="fas fa-home" style="color: white"></i></a
         ><span>Home</span>
       </div>
       <div class="menu-icon">
@@ -58,6 +74,55 @@
     <script>
       const video = document.getElementById("inputVideo");
       const canvas = document.getElementById("overlay");
+      const coordinatesDiv = document.getElementById("coordinates");
+
+      function showCoordinates() {
+        // Obtener la ubicación actual
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            // Éxito: position es un objeto con la información de la ubicación
+            coordinatesDiv.textContent = `Your exact location:\nLatitude: ${position.coords.latitude}\nLongitude: ${position.coords.longitude}`;
+
+            // Store coordinates in local storage
+            const coordinatesData = {
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+            };
+            localStorage.setItem(
+              "coordinates",
+              JSON.stringify(coordinatesData)
+            );
+
+            // Call the function from the "js/tts.js" script for additional logic
+            // Replace 'yourAdditionalFunction' with the actual function name
+            if (typeof yourAdditionalFunction === "function") {
+              yourAdditionalFunction();
+            }
+          },
+          function (error) {
+            // Error: manejar errores aquí
+            switch (error.code) {
+              case error.PERMISSION_DENIED:
+                alert("Permission denied to get the location.");
+                break;
+              case error.POSITION_UNAVAILABLE:
+                alert("Location information is not available.");
+                break;
+              case error.TIMEOUT:
+                alert("The request to get the location has timed out.");
+                break;
+              case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred while getting the location.");
+                break;
+            }
+          }
+        );
+      }
+
+      function takephoto() {
+        showCoordinates(); // Call the showCoordinates function when the button is clicked
+        // Additional logic for taking a photo can be added in the "js/tts.js" script
+      }
 
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         const constraints = { video: true };
